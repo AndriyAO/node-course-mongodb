@@ -1,3 +1,5 @@
+// mongod.exe --dbpath \Users\1\Documents\mongo-data
+//C:\Program Files\MongoDB\Server\4.0\bin
 const MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {

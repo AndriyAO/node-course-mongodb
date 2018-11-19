@@ -8,7 +8,7 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, client) => {
     const db = client.db('TodoApp');
 
 //    db.collection('Users').deleteOne({name: 'Andrii'});
-    db.collection('User').findOneAndDelete({_id: ObjectID('5be3f571a2ca953abc1eb4b9')}).then((res) => {
+    db.collection('Users').deleteMany({name:'Andrii'}).then((res) => {
         console.log(res);
     }, (err) => {
         console.log(err);
