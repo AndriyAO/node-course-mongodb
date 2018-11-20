@@ -9,18 +9,19 @@ let app = express();
 app.use(bodyParser.json());
 
 app.post('/users', (req, res) => {
-    let user = new User({
-        text: req.body.text
-    });
-});
+  var user = new User({
+    name: req.body.name
+  });
 
 user.save().then((doc) => {
     res.send(doc);
-}, (err) => {
+  }, (e) => {
     res.status(400).send(e);
+  });
 });
 
 app.listen(3000, () => {
     console.log('Started...');
 })
 
+module.exports = {app};
